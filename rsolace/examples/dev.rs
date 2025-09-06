@@ -39,7 +39,9 @@ unsafe extern "C" fn info_receive_callback(
 
 fn main() {
     let solclient_lib_dir = "rsolace-sys/solclient-7.25.0.10/lib";
-    env::set_var("LD_LIBRARY_PATH", solclient_lib_dir);
+    unsafe {
+        env::set_var("LD_LIBRARY_PATH", solclient_lib_dir);
+    }
     tracing_subscriber::fmt::init();
     let use_p: *mut std::ffi::c_void = ptr::null_mut();
     println!("Hello, world!");

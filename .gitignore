@@ -8,3 +8,5 @@ __pycache__/
 .build/
 *.ipynb
 solclient*.tar.gz
+
+Cargo.lock
